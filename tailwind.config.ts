@@ -52,6 +52,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Brotherhood colors
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					light: 'hsl(var(--gold-light))',
+					dark: 'hsl(var(--gold-dark))'
+				},
+				noble: {
+					DEFAULT: 'hsl(var(--noble-blue))',
+					light: 'hsl(var(--noble-blue-light))'
+				},
+				elegant: 'hsl(var(--elegant-gray))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -88,7 +99,39 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shine': 'shine 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate'
+			},
+			keyframes: {
+				...{
+					'accordion-down': {
+						from: { height: '0' },
+						to: { height: 'var(--radix-accordion-content-height)' }
+					},
+					'accordion-up': {
+						from: { height: 'var(--radix-accordion-content-height)' },
+						to: { height: '0' }
+					}
+				},
+				shine: {
+					'0%, 100%': { transform: 'translateX(-100%)' },
+					'50%': { transform: 'translateX(100%)' }
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				glow: {
+					'0%': { boxShadow: '0 0 20px hsl(var(--gold) / 0.3)' },
+					'100%': { boxShadow: '0 0 30px hsl(var(--gold) / 0.6), 0 0 40px hsl(var(--gold) / 0.3)' }
+				}
+			},
+			backgroundImage: {
+				'gradient-gold': 'var(--gradient-gold)',
+				'gradient-noble': 'var(--gradient-noble)',
+				'gradient-hero': 'var(--gradient-hero)'
 			}
 		}
 	},
